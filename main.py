@@ -9,8 +9,6 @@ import fake_useragent
 
 from director import Director
 
-from termcolor import colored
-
 def CreateArgument():
     arg = argparse.ArgumentParser()
     arg.add_argument('name', nargs='?')
@@ -28,8 +26,7 @@ def CreateJSONFile(title, quote, author, text):
     with open("data_file.json", "w") as outfile:
         json.dump(data, outfile, indent=2)
 
-if __name__ == "__main__":
-    os.system('clear')
+if __name__ == "__main__":    
     argument = CreateArgument()
     article_url = argument.parse_args().name
 
@@ -38,8 +35,7 @@ if __name__ == "__main__":
     title, quote, author, article_text = article.create_article()    
 
     # Создание JSON файла
-    CreateJSONFile(title, quote, author, article_text)
-    print(article_text)
+    CreateJSONFile(title, quote, author, article_text)   
 
     print("All done!")
     
