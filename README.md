@@ -2,10 +2,12 @@
 ***Verdion: 2.0.0***
 
 ### Python пакеты необходимые для установки через `pip`
-`requests`
-`bs4`
-`lxml`
-`urllib.request`
-`fake_useragent`
-`json`
-`argparse`
+
+`pip install bs4` <br>
+`pip install json` <br>
+`pip install lxml` <br>
+`pip install argparse` <br>
+`pip install requests` <br>
+`pip install urllib.request` <br>
+`pip install fake_useragent` <br>
+
