@@ -9,20 +9,20 @@ class ArticleParser():
     def __init__(self, article):
         self.article = article
         
-        self.tag_list = ['h1', 'blockquote']
-    
-    def __pattern__(self, pattern):
-        # Конкретный строитель третьего строителя
-        """Внутренние использование простого паттерна для поиска фрагмента нужного"""
-        result = re.findall(pattern, str(self.article))
-        result = str(self.article).replace(result[0], '')
-        return result
+        self.tag_list = ['h1', 'blockquote']   
     
     def __patternCreate__(self, tag):
         # Конкретный строитель третьего строителя
         """Создание простого паттерна для поиска фрагмента нужного"""
         pattern = re.compile(r'<'+ tag + r'.*>.*<\/'+ tag +r'>')
         return pattern
+
+    def __pattern__(self, pattern):
+        # Конкретный строитель третьего строителя
+        """Внутренние использование простого паттерна для поиска фрагмента нужного"""
+        result = re.findall(pattern, str(self.article))
+        result = str(self.article).replace(result[0], '')
+        return result
 
     def simple_replacement_cleaning(self):
         """Простая замена найденных по совпадениям нужных
