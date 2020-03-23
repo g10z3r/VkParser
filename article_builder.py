@@ -7,9 +7,7 @@ import re
 class ArticleParser():
     """Класс предназаначен для обрабтки <div> контента"""
     def __init__(self, article):
-        self.article = article
-        
-        self.tag_list = ['h1', 'blockquote']
+        self.article = article  
         
     def re_replacement_cleaning(self, regex, regex_key):
         # Основной строитель
