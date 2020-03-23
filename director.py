@@ -10,6 +10,8 @@ class Director():
         self.url = url
 
         self.regex_dict = {
+            r'<h1.*>.*<\/h1>': '',
+            r'<blockquote.*>.*<\/blockquote>': '',
             r'<\/div>|<div.*?>': '',
             r'class=\".+?\"|id=\".*?\"': '',            
             r'<p.*?>': '<p class="text">',
@@ -40,16 +42,15 @@ class Director():
         quote = article.tag_text('blockquote', class_='article_decoration_first')
         author = article.tag_text('blockquote', class_='article_decoration_last')
               
-        # Предварительная очистка
-        article_text = article.simple_replacement_cleaning()
-
         # Цикл замены совпадений через регулярные выражения
         for regex in self.regex_dict:
             article_text = article.re_replacement_cleaning(regex, self.regex_dict[regex])
-
+       
+            
         # Цикл простой замены по совпадениям
-        for r in self.replace_dict:
+        for r in self.replace_dict:            
             article_text = article_text.replace(r, self.replace_dict[r])  
+            
 
         # Проверка, есть ли автор цитаты
         if quote != author:
@@ -61,6 +62,8 @@ class Director():
         
         else:
             print("Произошла ошибка при получении данных, повторите попытку...")
+
+        
         
 
 
