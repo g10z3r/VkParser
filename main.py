@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     article = Director(article_url)
     # Получение заголовка/цитаты/автора/статьи
-    title, quote, author, article_text = article.create_article()    
+    title, quote, author, article_text = article.create_article()
 
     # Создание JSON файла
     CreateJSONFile(title, quote, author, article_text)   
