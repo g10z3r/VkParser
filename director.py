@@ -26,7 +26,7 @@ class Director():
             '</p>': '</p>\n\n',
             '</ul>': '</ul>\n',
             '</ol>': '</ol>\n',
-            '</h3>': '</ol>\n',
+            '</h3>': '</h3>\n',
         }
     
     def create_article(self):
