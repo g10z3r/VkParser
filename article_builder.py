@@ -19,10 +19,8 @@ class ArticleParser():
 
     def tag_text(self, tag, class_):
         """Получение текста без HTML разметки из
-        определенного тега (если он существует)"""
-        if self.article.find(tag, class_) in self.article:
-            tag_text = self.article.find(tag, class_).get_text()
-        else:
-            tag_text = ''
+        определенного тега (при условии что он существует)"""
 
-        return tag_text
+        return (self.article.find(tag, class_).get_text() 
+                if self.article.find(tag, class_) in self.article 
+                else '')
