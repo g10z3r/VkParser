@@ -53,17 +53,5 @@ class Director():
             
 
         # Проверка, есть ли автор цитаты
-        if quote != author:
-            return (title, quote, author, article_text)
-
-        elif quote == author:
-            author = ''
-            return (title, quote, author, article_text)
-        
-        else:
-            print("Произошла ошибка при получении данных, повторите попытку...")
-
-        
-        
-
+        return (title, quote,  ('' if quote==author else author), article_text)
 
